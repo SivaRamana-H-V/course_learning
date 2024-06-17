@@ -1,6 +1,10 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 
 class SearchScreen extends StatefulWidget {
+  const SearchScreen({super.key});
+
   @override
   _SearchScreenState createState() => _SearchScreenState();
 }
@@ -33,7 +37,7 @@ class _SearchScreenState extends State<SearchScreen> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.white),
+        iconTheme: const IconThemeData(color: Color(0xfffdfdfd)),
         title: Text(
           'Search Screen',
           style: Theme.of(context).textTheme.bodyMedium,
@@ -61,7 +65,7 @@ class _SearchScreenState extends State<SearchScreen> {
 class SearchBar extends StatelessWidget {
   final Function(String) onQueryChanged;
 
-  SearchBar({required this.onQueryChanged});
+  const SearchBar({super.key, required this.onQueryChanged});
 
   @override
   Widget build(BuildContext context) {
@@ -77,7 +81,7 @@ class SearchBar extends StatelessWidget {
               labelText: 'Search',
               border:
                   OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
-              prefixIcon: Icon(Icons.search),
+              prefixIcon: const Icon(Icons.search),
             ),
           ),
         ),

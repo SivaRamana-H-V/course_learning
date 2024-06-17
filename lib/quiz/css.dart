@@ -1,6 +1,10 @@
+// ignore_for_file: camel_case_types, library_private_types_in_public_api, unnecessary_to_list_in_spreads
+
 import 'package:flutter/material.dart';
 
 class cssQuizPage extends StatefulWidget {
+  const cssQuizPage({super.key});
+
   @override
   _cssQuizPageState createState() => _cssQuizPageState();
 }
@@ -9,7 +13,7 @@ class _cssQuizPageState extends State<cssQuizPage> {
   int _currentQuestionIndex = 0;
   List<String> _selectedAnswers = List.filled(50, '');
   List<bool> _correctAnswers = List.filled(50, false);
-  List<Question> _questions = [
+  final List<Question> _questions = [
     Question(
       questionText:
           'Which of the following option leads to the portability and security of Java?',
@@ -44,10 +48,10 @@ class _cssQuizPageState extends State<cssQuizPage> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('Quiz Results'),
+        title: const Text('Quiz Results'),
         content: Text(
           'You got $correctAnswers out of ${_questions.length} correct!',
-          style: TextStyle(color: Colors.teal),
+          style: const TextStyle(color: Color(0xffeca731)),
         ),
         actions: [
           TextButton(
@@ -59,7 +63,7 @@ class _cssQuizPageState extends State<cssQuizPage> {
                 _correctAnswers = List.filled(50, false);
               });
             },
-            child: Text('Restart'),
+            child: const Text('Restart'),
           ),
         ],
       ),
@@ -70,7 +74,7 @@ class _cssQuizPageState extends State<cssQuizPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.white),
+        iconTheme: const IconThemeData(color: Color(0xfffdfdfd)),
         title: Text(
           'Flutter Quiz',
           style: Theme.of(context).textTheme.bodyMedium,
@@ -84,17 +88,17 @@ class _cssQuizPageState extends State<cssQuizPage> {
             children: <Widget>[
               Text(
                 'Question ${_currentQuestionIndex + 1}/${_questions.length}',
-                style: TextStyle(
+                style: const TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
-                    color: Colors.teal),
+                    color: Color(0xffeca731)),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Text(
                 _questions[_currentQuestionIndex].questionText,
-                style: TextStyle(fontSize: 18, color: Colors.teal),
+                style: const TextStyle(fontSize: 18, color: Color(0xffeca731)),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               ..._questions[_currentQuestionIndex].options.map((option) {
                 return RadioListTile<String>(
                   title: Text(
@@ -120,19 +124,19 @@ class _cssQuizPageState extends State<cssQuizPage> {
                   },
                 );
               }).toList(),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: _nextQuestion,
-                child: Text(_currentQuestionIndex < _questions.length - 1
-                    ? 'Next'
-                    : 'Submit'),
                 style: ElevatedButton.styleFrom(
-                  // primary: Colors.teal,
-                  padding: EdgeInsets.symmetric(vertical: 16.0),
+                  // primary: Color(0xffeca731),
+                  padding: const EdgeInsets.symmetric(vertical: 16.0),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
                 ),
+                child: Text(_currentQuestionIndex < _questions.length - 1
+                    ? 'Next'
+                    : 'Submit'),
               ),
             ],
           ),

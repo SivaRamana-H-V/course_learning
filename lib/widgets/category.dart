@@ -35,11 +35,13 @@ class CategoriesPage extends StatelessWidget {
     },
   ];
 
+  CategoriesPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.white),
+        iconTheme: const IconThemeData(color: Color(0xfffdfdfd)),
         title: Text(
           'Learning Categories',
           style: Theme.of(context).textTheme.bodyMedium,
@@ -50,18 +52,18 @@ class CategoriesPage extends StatelessWidget {
         itemBuilder: (context, index) {
           final category = categories[index];
           return Card(
-            margin: EdgeInsets.all(10),
+            margin: const EdgeInsets.all(10),
             child: ListTile(
-              leading: Icon(category['icon'], size: 40, color: Colors.teal),
+              leading: Icon(category['icon'], size: 40, color: const Color(0xffeca731)),
               title: Text(
                 category['title'],
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               subtitle: Text(category['description']),
-              trailing: Icon(Icons.arrow_forward_ios),
+              trailing: const Icon(Icons.arrow_forward_ios),
               onTap: () {
                 // Handle category tap
               },

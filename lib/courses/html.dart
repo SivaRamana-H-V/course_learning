@@ -1,3 +1,5 @@
+// ignore_for_file: camel_case_types, use_super_parameters, library_private_types_in_public_api, prefer_const_constructors, avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import 'package:course_learning/courses/htmlmodel.dart';
@@ -51,10 +53,10 @@ class _htmlPageState extends State<htmlPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.white),
+        iconTheme: IconThemeData(color: Color(0xfffdfdfd)),
         title: Text(
           'HTML Course',
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Color(0xfffdfdfd)),
         ),
       ),
       body: SingleChildScrollView(
@@ -74,8 +76,8 @@ class _htmlPageState extends State<htmlPage> {
             ),
             LinearProgressIndicator(
               value: calculateProgress() / 100,
-              backgroundColor: Colors.teal[300],
-              valueColor: AlwaysStoppedAnimation<Color>(Colors.teal),
+              backgroundColor: Color(0xffeca731),
+              valueColor: AlwaysStoppedAnimation<Color>(Color(0xffeca731)),
             ),
             ListView.builder(
               physics: NeverScrollableScrollPhysics(),
@@ -83,12 +85,7 @@ class _htmlPageState extends State<htmlPage> {
               itemCount: HtmlModel.VideoList.length,
               itemBuilder: (context, index) {
                 return ListTile(
-                  leading: Image.asset(
-                    HtmlModel.VideoList[index].thumbnail!,
-                    height: 100,
-                    width: 100,
-                    fit: BoxFit.cover,
-                  ),
+                  leading:  HtmlModel.VideoList[index].thumbnail,
                   title: Text(
                     HtmlModel.VideoList[index].tittle!,
                     style: TextStyle(fontSize: 15, color: Colors.black),

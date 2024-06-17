@@ -1,4 +1,4 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
+// ignore_for_file: public_member_api_docs, sort_constructors_first, non_constant_identifier_names, avoid_print
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class CsharpModel {
@@ -99,6 +99,7 @@ class CsharpModel {
 
   static getVideoId(String s) {
     print("url ofnyoutube $s");
+    // ignore: unused_local_variable
     String? videoId = YoutubePlayer.convertUrlToId(s);
     return s;
   }

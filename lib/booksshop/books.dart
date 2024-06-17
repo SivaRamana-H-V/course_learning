@@ -1,10 +1,12 @@
+// ignore_for_file: unnecessary_import
+
 import 'package:course_learning/courses.dart';
 import 'package:course_learning/courses/html.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class BooksPage extends StatefulWidget {
-  const BooksPage({Key? key}) : super(key: key);
+  const BooksPage({super.key});
 
   @override
   State<BooksPage> createState() => _BooksPageState();
@@ -15,7 +17,7 @@ class _BooksPageState extends State<BooksPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.white),
+        iconTheme: const IconThemeData(color: Color(0xfffdfdfd)),
         title: Text(
           'Books Shop',
           style: Theme.of(context).textTheme.bodyMedium,
@@ -25,7 +27,7 @@ class _BooksPageState extends State<BooksPage> {
         scrollDirection: Axis.vertical,
         child: Column(
           children: [
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -33,14 +35,14 @@ class _BooksPageState extends State<BooksPage> {
                   'assets/AtomicHabits.png',
                   'Atomic Habits',
                   () => Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => htmlPage())),
+                      MaterialPageRoute(builder: (context) => const htmlPage())),
                 ),
-                SizedBox(width: 15),
+                const SizedBox(width: 15),
                 _buildCourseContainer(
                   'assets/css.png',
                   'Learn CSS3',
                   () => Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => coursesPage())),
+                      MaterialPageRoute(builder: (context) => const coursesPage())),
                 ),
               ],
             ),
@@ -56,7 +58,7 @@ class _BooksPageState extends State<BooksPage> {
       height: 250,
       width: 200,
       decoration: BoxDecoration(
-        color: Colors.teal.shade100,
+        color: const Color(0xffeca731),
         borderRadius: BorderRadius.circular(15),
         boxShadow: [
           BoxShadow(
@@ -75,18 +77,18 @@ class _BooksPageState extends State<BooksPage> {
             width: 120,
             fit: BoxFit.cover,
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Text(
             title,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 17,
-              color: Colors.teal,
+              color: Color(0xffeca731),
               fontWeight: FontWeight.normal,
             ),
           ),
           ElevatedButton(
             onPressed: () {},
-            child: Text(
+            child: const Text(
               'Download Now',
               style: TextStyle(fontSize: 16),
             ),

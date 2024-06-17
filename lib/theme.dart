@@ -4,8 +4,8 @@
 //   brightness: Brightness.light,
 //   primarySwatch: Colors.blue,
 //   primaryColor: Colors.blue,
-//   backgroundColor: Colors.white,
-//   scaffoldBackgroundColor: Colors.white,
+//   backgroundColor: Color(0xfffdfdfd),
+//   scaffoldBackgroundColor: Color(0xfffdfdfd),
 //   accentColor: Colors.blueAccent,
 //   appBarTheme: AppBarTheme(
 //     color: Colors.blue,
@@ -27,7 +27,7 @@
 //     color: Colors.black,
 //   ),
 //   textTheme: TextTheme(
-//     bodyText1: TextStyle(color: Colors.white),
-//     bodyText2: TextStyle(color: Colors.white),
+//     bodyText1: TextStyle(color: Color(0xfffdfdfd)),
+//     bodyText2: TextStyle(color: Color(0xfffdfdfd)),
 //   ),
 // );

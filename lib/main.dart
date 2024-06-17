@@ -1,5 +1,7 @@
+// ignore_for_file: unused_import
+
 import 'package:course_learning/auth/login.dart';
-import 'package:course_learning/auth/signup.dart';
+import 'package:course_learning/auth/signup.txt';
 import 'package:course_learning/homepage.dart';
 import 'package:course_learning/splash.dart';
 import 'package:flutter/material.dart';
@@ -15,17 +17,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Code Mingle',
+      title: 'Startup Culture',
       theme: ThemeData(
-          textTheme: TextTheme(
+          textTheme: const TextTheme(
               bodyMedium: TextStyle(
                   fontSize: 20.0,
                   fontWeight: FontWeight.bold,
-                  color: Colors.white)),
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
+                  color: Color(0xff3F3E3E))),
+          colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xffeca731)),
           useMaterial3: true,
-          appBarTheme: AppBarTheme(backgroundColor: Colors.teal)),
-      home: SplashScreen(),
+          appBarTheme: const AppBarTheme(backgroundColor: Color(0xffeca731))),
+      home: const SplashScreen(),
     );
   }
 }

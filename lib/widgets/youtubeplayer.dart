@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable, library_private_types_in_public_api, prefer_final_fields, avoid_print
+
 import 'package:flutter/material.dart';
 
 import 'package:flutter/services.dart';
@@ -94,7 +96,7 @@ class _YoutubeVideoState extends State<YoutubeVideo> {
                 child: Text(
                   _controller.metadata.title,
                   style: const TextStyle(
-                    color: Colors.white,
+                    color: Color(0xfffdfdfd),
                     fontSize: 18.0,
                   ),
                   overflow: TextOverflow.ellipsis,

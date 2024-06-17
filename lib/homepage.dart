@@ -1,3 +1,5 @@
+// ignore_for_file: unused_field, unnecessary_import, camel_case_types, use_super_parameters, prefer_const_constructors
+
 import 'package:course_learning/courses.dart';
 import 'package:course_learning/courses/html.dart';
 import 'package:course_learning/profile.dart';
@@ -25,7 +27,7 @@ class _homePageState extends State<homePage> {
     _pageController = PageController(initialPage: _selectedTab);
   }
 
-  List _pages = [
+  final List _pages = [
     homePageScreen(),
     coursesPage(),
     RoadmapPage(),
@@ -46,14 +48,14 @@ class _homePageState extends State<homePage> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedTab,
         onTap: (index) => _changeTab(index),
-        selectedItemColor: Colors.teal,
+        selectedItemColor: Color(0xffeca731),
         unselectedItemColor: Colors.grey,
-        items: [
+        items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(
               icon: Icon(Icons.menu_book_outlined), label: "Courses"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.payment_sharp), label: "RoadMap"),
+              icon: Icon(Icons.payment_sharp), label: "Resources"),
           BottomNavigationBarItem(
               icon: Icon(Icons.person_3_outlined), label: "Profile"),
         ],

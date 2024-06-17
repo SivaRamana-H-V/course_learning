@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_import, camel_case_types, avoid_print
+
 import 'package:course_learning/courses/javamodel.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +24,7 @@ class _javaPageState extends State<javaPage> {
     if (videoId != null) {
       _controller = YoutubePlayerController(
         initialVideoId: videoId!,
-        flags: YoutubePlayerFlags(
+        flags: const YoutubePlayerFlags(
           autoPlay: false,
         ),
       );
@@ -42,7 +44,7 @@ class _javaPageState extends State<javaPage> {
     print("url of current videl $url");
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.white),
+        iconTheme: const IconThemeData(color: Color(0xfffdfdfd)),
         title: Text(
           'HTML Course',
           style: Theme.of(context).textTheme.bodyMedium,
@@ -70,7 +72,7 @@ class _javaPageState extends State<javaPage> {
                       });
                     },
                     child: ListTile(
-                      contentPadding: EdgeInsets.all(10),
+                      contentPadding: const EdgeInsets.all(10),
                       leading: Image.asset(
                         JavaModel.VideoList[i].thumbnail!,
                         height: 100,
@@ -79,7 +81,7 @@ class _javaPageState extends State<javaPage> {
                       ),
                       title: Text(
                         JavaModel.VideoList[i].tittle!,
-                        style: TextStyle(color: Colors.black, fontSize: 15),
+                        style: const TextStyle(color: Colors.black, fontSize: 15),
                       ),
                     ),
                   );

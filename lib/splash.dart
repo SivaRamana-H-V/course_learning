@@ -1,8 +1,13 @@
-import 'package:course_learning/auth/signup.dart';
+// ignore_for_file: library_private_types_in_public_api
+
+import 'package:course_learning/auth/login.dart';
+// import 'package:course_learning/auth/signup.txt';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
 class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
+
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
@@ -28,10 +33,11 @@ class _SplashScreenState extends State<SplashScreen>
 
     _animationController.forward();
 
-    Timer(Duration(seconds: 3), () {
+    Timer(const Duration(seconds: 3), () {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
-          builder: (context) => SignUpPage(),
+          builder: (context) => 
+          const LoginPage(),
         ),
       );
     });
@@ -46,14 +52,14 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.teal,
+      backgroundColor: const Color(0xffeca731),
       body: Center(
         child: FadeTransition(
           opacity: _animation,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Container(
+              SizedBox(
                 height: 135,
                 width: 300,
                 child: Image.asset(

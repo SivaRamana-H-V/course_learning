@@ -1,9 +1,11 @@
-import 'package:course_learning/auth/login.dart';
-import 'package:course_learning/courses/html.dart';
+import 'package:course_learning/homepage.dart';
 import 'package:flutter/material.dart';
 
 class EnrollmentForm extends StatefulWidget {
+  const EnrollmentForm({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _EnrollmentFormState createState() => _EnrollmentFormState();
 }
 
@@ -15,7 +17,7 @@ class _EnrollmentFormState extends State<EnrollmentForm> {
   DateTime? dateOfBirth;
   String? gender;
   String? education;
-  String? occupation;
+  String? CollegeUniversity;
   String? courseSelection;
   String? learningMode;
   String? learningObjectives;
@@ -27,7 +29,7 @@ class _EnrollmentFormState extends State<EnrollmentForm> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.white),
+        iconTheme: const IconThemeData(color: Color(0xfffdfdfd)),
         title: Text(
           'Enrollment Form',
           style: Theme.of(context).textTheme.bodyMedium,
@@ -39,7 +41,7 @@ class _EnrollmentFormState extends State<EnrollmentForm> {
           key: _formKey,
           child: ListView(
             children: <Widget>[
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               TextFormField(
@@ -55,7 +57,7 @@ class _EnrollmentFormState extends State<EnrollmentForm> {
                   return null;
                 },
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               TextFormField(
@@ -72,7 +74,7 @@ class _EnrollmentFormState extends State<EnrollmentForm> {
                   return null;
                 },
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               TextFormField(
@@ -83,7 +85,7 @@ class _EnrollmentFormState extends State<EnrollmentForm> {
                 keyboardType: TextInputType.phone,
                 onSaved: (value) => phoneNumber = value,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               DropdownButtonFormField<String>(
@@ -91,10 +93,10 @@ class _EnrollmentFormState extends State<EnrollmentForm> {
                     labelText: 'Gender',
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15))),
-                items: ['Male', 'Female', 'Other']
+                items: ['Male', 'Female']
                     .map((label) => DropdownMenuItem(
-                          child: Text(label),
                           value: label,
+                          child: Text(label),
                         ))
                     .toList(),
                 onChanged: (value) {
@@ -104,7 +106,7 @@ class _EnrollmentFormState extends State<EnrollmentForm> {
                 },
                 onSaved: (value) => gender = value,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               TextFormField(
@@ -114,17 +116,7 @@ class _EnrollmentFormState extends State<EnrollmentForm> {
                         borderRadius: BorderRadius.circular(15))),
                 onSaved: (value) => education = value,
               ),
-              SizedBox(
-                height: 10,
-              ),
-              TextFormField(
-                decoration: InputDecoration(
-                    labelText: 'Current Occupation',
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(15))),
-                onSaved: (value) => occupation = value,
-              ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               DropdownButtonFormField<String>(
@@ -133,20 +125,68 @@ class _EnrollmentFormState extends State<EnrollmentForm> {
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15))),
                 items: [
-                  'HTML',
-                  'CSS',
-                  'JavaScript',
-                  'Flutter',
-                  'Dart',
-                  'Python',
-                  'Java',
-                  'SQL',
-                  'C++',
-                  'C#',
+                  // Engineering Courses
+                  'B.Tech. AI & DS',
+                  'B.E. CSE',
+                  'B.Tech. IT',
+                  'B.Tech. ECE',
+                  'B.E. EEE',
+                  'B.E. ME',
+                  'B.Tech. CE',
+                  'B.Tech. ChE',
+                  'M.Tech. CSE',
+                  'M.Tech. AI',
+                  'M.Tech. DS',
+                  'M.E. CS',
+                  'M.E. PED',
+                  'M.E. TE',
+                  'M.Tech. SE',
+                  'M.Tech. ChE',
+                  'Ph.D. CSE',
+                  'Ph.D. IT',
+                  'Ph.D. ECE',
+                  'Ph.D. ME',
+                  'Ph.D. CE',
+                  'Ph.D. ChE',
+                  'Diploma CSE',
+                  'Diploma EEE',
+                  'Diploma ME',
+                  'Diploma CE',
+                  'Diploma ChE',
+
+                  // Arts Courses
+                  'B.A. English Lit.',
+                  'B.A. Economics',
+                  'B.A. Pol. Sci.',
+                  'B.A. History',
+                  'B.A. Sociology',
+                  'M.A. English Lit.',
+                  'M.A. Economics',
+                  'M.A. Pol. Sci.',
+                  'M.A. History',
+                  'M.A. Sociology',
+                  'Ph.D. English Lit.',
+                  'Ph.D. Economics',
+                  'Ph.D. Pol. Sci.',
+                  'Ph.D. History',
+                  'Ph.D. Sociology',
+
+                  // Business Courses
+                  'B.Com. General',
+                  'B.Com. Comp. Apps',
+                  'B.Com. Acc & Fin',
+                  'B.B.A.',
+                  'M.Com.',
+                  'M.B.A.',
+                  'Ph.D. Commerce',
+                  'Ph.D. Management',
                 ]
                     .map((label) => DropdownMenuItem(
-                          child: Text(label),
                           value: label,
+                          child: Text(
+                            label,
+                            overflow: TextOverflow.ellipsis,
+                          ),
                         ))
                     .toList(),
                 onChanged: (value) {
@@ -156,30 +196,66 @@ class _EnrollmentFormState extends State<EnrollmentForm> {
                 },
                 onSaved: (value) => courseSelection = value,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               DropdownButtonFormField<String>(
                 decoration: InputDecoration(
-                    labelText: 'Preferred Mode of Learning',
+                    labelText: 'College/University Name',
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15))),
-                items: ['Online', 'In-person', 'Hybrid']
+                items: [
+                 'KGiSL Institute of Technology',
+                  'KCT',
+                  'PSG Tech',
+                  'Amrita Vishwa Vidyapeetham',
+                  'Anna University',
+                  'Bharathiar University',
+                  'Bharathidasan University',
+                  'Madras University',
+                  'SRM University',
+                  'VIT University',
+                  'Others'
+                ]
                     .map((label) => DropdownMenuItem(
-                          child: Text(label),
                           value: label,
+                          child: Text(
+                            label,
+                            overflow: TextOverflow.ellipsis,
+                          ),
                         ))
                     .toList(),
                 onChanged: (value) {
                   setState(() {
-                    learningMode = value;
+                    courseSelection = value;
                   });
                 },
-                onSaved: (value) => learningMode = value,
+                onSaved: (value) => CollegeUniversity = value,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
+              // DropdownButtonFormField<String>(
+              //   decoration: InputDecoration(
+              //       labelText: 'Preferred Mode of Learning',
+              //       border: OutlineInputBorder(
+              //           borderRadius: BorderRadius.circular(15))),
+              //   items: ['Online', 'In-person', 'Hybrid']
+              //       .map((label) => DropdownMenuItem(
+              //             value: label,
+              //             child: Text(label),
+              //           ))
+              //       .toList(),
+              //   onChanged: (value) {
+              //     setState(() {
+              //       learningMode = value;
+              //     });
+              //   },
+              //   onSaved: (value) => learningMode = value,
+              // ),
+              // const SizedBox(
+              //   height: 10,
+              // ),
               TextFormField(
                 decoration: InputDecoration(
                     labelText: 'Learning Objectives',
@@ -187,11 +263,11 @@ class _EnrollmentFormState extends State<EnrollmentForm> {
                         borderRadius: BorderRadius.circular(15))),
                 onSaved: (value) => learningObjectives = value,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               CheckboxListTile(
-                title: Text('I agree to the terms and conditions'),
+                title: const Text('I agree to the terms and conditions'),
                 value: agreeToTerms,
                 onChanged: (bool? value) {
                   setState(() {
@@ -199,7 +275,7 @@ class _EnrollmentFormState extends State<EnrollmentForm> {
                   });
                 },
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               ElevatedButton(
@@ -207,10 +283,10 @@ class _EnrollmentFormState extends State<EnrollmentForm> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => htmlPage(),
+                          builder: (context) => const homePage(),
                         ));
                   },
-                  child: Text('Submit'))
+                  child: const Text('Submit'))
             ],
           ),
         ),
@@ -219,4 +295,4 @@ class _EnrollmentFormState extends State<EnrollmentForm> {
   }
 }
 
-void main() => runApp(MaterialApp(home: EnrollmentForm()));
+void main() => runApp(const MaterialApp(home: EnrollmentForm()));

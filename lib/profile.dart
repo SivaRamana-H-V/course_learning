@@ -1,7 +1,11 @@
+// ignore_for_file: unnecessary_import, sort_child_properties_last
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatefulWidget {
+  const ProfilePage({super.key});
+
   @override
   State<ProfilePage> createState() => _ProfilePageState();
 }
@@ -11,15 +15,15 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.white),
-        backgroundColor: Colors.teal,
-        title: Text(
+        iconTheme: const IconThemeData(color: Color(0xfffdfdfd)),
+        backgroundColor: const Color(0xffeca731),
+        title: const Text(
           'Profile',
-          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+          style: TextStyle(fontWeight: FontWeight.bold, color: Color(0xfffdfdfd)),
         ),
-        actions: [
+        actions: const [
           Padding(
-            padding: const EdgeInsets.all(20),
+            padding: EdgeInsets.all(20),
             child: Icon(Icons.settings),
           ),
         ],
@@ -30,33 +34,33 @@ class _ProfilePageState extends State<ProfilePage> {
             Container(
               height: 380,
               width: double.infinity,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(40),
                   bottomRight: Radius.circular(40),
                 ),
-                color: Colors.teal,
+                color: Color(0xffeca731),
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  CircleAvatar(
+                  const CircleAvatar(
                     radius: 60,
                     backgroundImage: AssetImage('assets/profile.jpg'),
                   ),
-                  SizedBox(height: 30),
-                  Text(
+                  const SizedBox(height: 30),
+                  const Text(
                     'Zunaira Shoaib',
-                    style: TextStyle(color: Colors.white, fontSize: 26),
+                    style: TextStyle(color: Color(0xfffdfdfd), fontSize: 26),
                   ),
-                  Text(
+                  const Text(
                     'Software Engineer',
-                    style: TextStyle(color: Colors.white, fontSize: 17),
+                    style: TextStyle(color: Color(0xfffdfdfd), fontSize: 17),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(30),
                     child: RichText(
-                      text: TextSpan(
+                      text: const TextSpan(
                         style: TextStyle(fontSize: 17),
                         text:
                             "Software Engineer | Flutter Developer | Firebase | API's | Artificial Intelligence AND Machine learning Enthusiast",
@@ -67,7 +71,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 ],
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             SizedBox(
               height: 50,
               width: 400,
@@ -75,14 +79,14 @@ class _ProfilePageState extends State<ProfilePage> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => EditProfilePage()),
+                    MaterialPageRoute(builder: (context) => const EditProfilePage()),
                   );
                 },
-                icon: Icon(Icons.edit),
-                label: Text('Edit Profile'),
+                icon: const Icon(Icons.edit),
+                label: const Text('Edit Profile'),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             SizedBox(
@@ -95,11 +99,11 @@ class _ProfilePageState extends State<ProfilePage> {
                     MaterialPageRoute(builder: (context) => AchievementsPage()),
                   );
                 },
-                icon: Icon(Icons.emoji_events),
-                label: Text('View Achievements'),
+                icon: const Icon(Icons.emoji_events),
+                label: const Text('View Achievements'),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             SizedBox(
@@ -109,11 +113,11 @@ class _ProfilePageState extends State<ProfilePage> {
                 onPressed: () {
                   _showLogoutDialog();
                 },
-                icon: Icon(Icons.logout),
-                label: Text('Logout'),
+                icon: const Icon(Icons.logout),
+                label: const Text('Logout'),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             SizedBox(
@@ -123,8 +127,8 @@ class _ProfilePageState extends State<ProfilePage> {
                 onPressed: () {
                   _showDeleteAccountDialog();
                 },
-                icon: Icon(Icons.delete),
-                label: Text('Delete Account'),
+                icon: const Icon(Icons.delete),
+                label: const Text('Delete Account'),
                 style: ElevatedButton.styleFrom(
                     // primary: Colors.red,
                     ),
@@ -141,24 +145,24 @@ class _ProfilePageState extends State<ProfilePage> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Logout'),
-          content: Text(
+          title: const Text('Logout'),
+          content: const Text(
             'Are you sure you want to logout?',
-            style: TextStyle(color: Colors.teal),
+            style: TextStyle(color: Color(0xffeca731)),
           ),
           actions: [
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text('Cancel'),
+              child: const Text('Cancel'),
             ),
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
                 // Perform logout operation
               },
-              child: Text('Logout'),
+              child: const Text('Logout'),
             ),
           ],
         );
@@ -171,24 +175,24 @@ class _ProfilePageState extends State<ProfilePage> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Delete Account'),
-          content: Text(
+          title: const Text('Delete Account'),
+          content: const Text(
             'Are you sure you want to delete your account? This action cannot be undone.',
-            style: TextStyle(color: Colors.teal),
+            style: TextStyle(color: Color(0xffeca731)),
           ),
           actions: [
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text('Cancel'),
+              child: const Text('Cancel'),
             ),
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
                 // Perform delete account operation
               },
-              child: Text('Delete'),
+              child: const Text('Delete'),
               style: TextButton.styleFrom(
                   // primary: Colors.red
                   ),
@@ -201,68 +205,72 @@ class _ProfilePageState extends State<ProfilePage> {
 }
 
 class EditProfilePage extends StatelessWidget {
+  const EditProfilePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.white),
+        iconTheme: const IconThemeData(color: Color(0xfffdfdfd)),
         title: Text(
           'Edit Profile',
           style: Theme.of(context).textTheme.bodyMedium,
         ),
-        backgroundColor: Colors.teal,
+        backgroundColor: const Color(0xffeca731),
       ),
-      body: Padding(
-        padding: EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            TextField(
-              decoration: InputDecoration(
-                labelText: 'Name',
-                border: OutlineInputBorder(),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const TextField(
+                decoration: InputDecoration(
+                  labelText: 'Name',
+                  border: OutlineInputBorder(),
+                ),
               ),
-            ),
-            SizedBox(height: 16),
-            TextField(
-              decoration: InputDecoration(
-                labelText: 'Occopation',
-                border: OutlineInputBorder(),
+              const SizedBox(height: 16),
+              const TextField(
+                decoration: InputDecoration(
+                  labelText: 'Occopation',
+                  border: OutlineInputBorder(),
+                ),
               ),
-            ),
-            SizedBox(height: 16),
-            TextField(
-              decoration: InputDecoration(
-                labelText: 'Email',
-                border: OutlineInputBorder(),
+              const SizedBox(height: 16),
+              const TextField(
+                decoration: InputDecoration(
+                  labelText: 'Email',
+                  border: OutlineInputBorder(),
+                ),
               ),
-            ),
-            SizedBox(height: 16),
-            TextField(
-              decoration: InputDecoration(
-                labelText: 'Phone',
-                border: OutlineInputBorder(),
+              const SizedBox(height: 16),
+              const TextField(
+                decoration: InputDecoration(
+                  labelText: 'Phone',
+                  border: OutlineInputBorder(),
+                ),
               ),
-            ),
-            SizedBox(height: 16),
-            TextField(
-              decoration: InputDecoration(
-                labelText: 'Bio',
-                border: OutlineInputBorder(),
+              const SizedBox(height: 16),
+              const TextField(
+                decoration: InputDecoration(
+                  labelText: 'Bio',
+                  border: OutlineInputBorder(),
+                ),
+                maxLines: 3,
               ),
-              maxLines: 3,
-            ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                // Implement save profile functionality
-              },
-              child: Text('Save Changes'),
-              style: ElevatedButton.styleFrom(
-                  // primary: Colors.teal,
-                  ),
-            ),
-          ],
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  // Implement save profile functionality
+                },
+                style: ElevatedButton.styleFrom(
+                    // primary: Color(0xffeca731),
+                    ),
+                child: const Text('Save Changes'),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -285,27 +293,29 @@ class AchievementsPage extends StatelessWidget {
     'Completed Java Course',
   ];
 
+  AchievementsPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.white),
+        iconTheme: const IconThemeData(color: Color(0xfffdfdfd)),
         title: Text(
           'Achievements',
           style: Theme.of(context).textTheme.bodyMedium,
         ),
-        backgroundColor: Colors.teal,
+        backgroundColor: const Color(0xffeca731),
       ),
       body: ListView.builder(
         itemCount: achievements.length,
         itemBuilder: (context, index) {
           return Card(
-            margin: EdgeInsets.all(10),
+            margin: const EdgeInsets.all(10),
             child: Padding(
               padding: const EdgeInsets.all(16.0),
               child: Text(
                 achievements[index],
-                style: TextStyle(color: Colors.teal, fontSize: 18),
+                style: const TextStyle(color: Color(0xffeca731), fontSize: 18),
               ),
             ),
           );

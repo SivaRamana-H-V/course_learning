@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors, library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 
 class DiscussionScreen extends StatefulWidget {
@@ -26,7 +28,7 @@ class _DiscussionScreenState extends State<DiscussionScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.white),
+        iconTheme: const IconThemeData(color: Color(0xfffdfdfd)),
         title: Text(
           'Discussion Forum',
           style: Theme.of(context).textTheme.bodyMedium,
@@ -48,16 +50,16 @@ class _DiscussionScreenState extends State<DiscussionScreen> {
                     children: [
                       if (!isMe)
                         CircleAvatar(
-                          child: Text(message['user']![0]),
                           backgroundColor: Colors.grey,
+                          child: Text(message['user']![0]),
                         ),
-                      SizedBox(width: 8),
+                      const SizedBox(width: 8),
                       Container(
                         decoration: BoxDecoration(
-                          color: isMe ? Colors.teal : Colors.grey[300],
+                          color: isMe ? const Color(0xffeca731) : Colors.grey[300],
                           borderRadius: BorderRadius.circular(12),
                         ),
-                        padding: EdgeInsets.all(10),
+                        padding: const EdgeInsets.all(10),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -65,24 +67,24 @@ class _DiscussionScreenState extends State<DiscussionScreen> {
                               message['user']!,
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
-                                color: isMe ? Colors.white : Colors.black,
+                                color: isMe ? const Color(0xfffdfdfd) : Colors.black,
                               ),
                             ),
-                            SizedBox(height: 5),
+                            const SizedBox(height: 5),
                             Text(
                               message['text']!,
                               style: TextStyle(
-                                color: isMe ? Colors.white : Colors.black,
+                                color: isMe ? const Color(0xfffdfdfd) : Colors.black,
                               ),
                             ),
                           ],
                         ),
                       ),
-                      SizedBox(width: 8),
+                      const SizedBox(width: 8),
                       if (isMe)
                         CircleAvatar(
+                          backgroundColor: const Color(0xffeca731),
                           child: Text('Me'[0]),
-                          backgroundColor: Colors.teal,
                         ),
                     ],
                   ),
@@ -105,11 +107,11 @@ class _DiscussionScreenState extends State<DiscussionScreen> {
                     ),
                   ),
                 ),
-                SizedBox(width: 8),
+                const SizedBox(width: 8),
                 FloatingActionButton(
                   onPressed: _sendMessage,
-                  child: Icon(Icons.send),
-                  backgroundColor: Colors.teal,
+                  backgroundColor: const Color(0xffeca731),
+                  child: const Icon(Icons.send),
                 ),
               ],
             ),

@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_import, camel_case_types, prefer_const_constructors, avoid_print
+
 import 'package:course_learning/courses/csharpmodel.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -42,7 +44,7 @@ class _csharpPageState extends State<csharpPage> {
     print("url of current videl $url");
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.white),
+        iconTheme: IconThemeData(color: Color(0xfffdfdfd)),
         title: Text(
           'C# Course',
           style: Theme.of(context).textTheme.bodyMedium,

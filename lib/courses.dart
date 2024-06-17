@@ -1,17 +1,7 @@
-import 'package:course_learning/auth/enroll.dart';
-import 'package:course_learning/courses/charp.dart';
-import 'package:course_learning/courses/cplusplus.dart';
-import 'package:course_learning/courses/css.dart';
-import 'package:course_learning/courses/dart.dart';
-import 'package:course_learning/courses/flutter.dart';
 import 'package:course_learning/courses/html.dart';
-import 'package:course_learning/courses/java.dart';
-import 'package:course_learning/courses/js.dart';
-import 'package:course_learning/courses/python.dart';
-import 'package:course_learning/courses/sql.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+// ignore: camel_case_types
 class coursesPage extends StatefulWidget {
   const coursesPage({super.key});
 
@@ -19,23 +9,25 @@ class coursesPage extends StatefulWidget {
   State<coursesPage> createState() => _coursesPageState();
 }
 
+// ignore: camel_case_types
 class _coursesPageState extends State<coursesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.white),
-        backgroundColor: Colors.teal,
-        title: Text(
+        iconTheme: const IconThemeData(color: Color(0xfffdfdfd)),
+        backgroundColor: const Color(0xffeca731),
+        title: const Text(
           'Courses',
-          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+          style:
+              TextStyle(fontWeight: FontWeight.bold, color: Color(0xfffdfdfd)),
         ),
       ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Row(
@@ -45,7 +37,7 @@ class _coursesPageState extends State<coursesPage> {
                   height: 200,
                   width: 160,
                   decoration: BoxDecoration(
-                    color: Colors.teal.shade100,
+                    color: const Color(0xffeca731),
                     borderRadius: BorderRadius.circular(15),
                     boxShadow: [
                       BoxShadow(
@@ -58,18 +50,17 @@ class _coursesPageState extends State<coursesPage> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Image.asset(
-                        'assets/html.png',
-                        height: 100,
-                        width: 100,
-                        fit: BoxFit.cover,
+                      const Icon(
+                        Icons.business_center_rounded,
+                        size: 100,
+                        color: Colors.white,
                       ),
-                      SizedBox(height: 10),
-                      Text(
-                        'Learn HTML3',
+                      const SizedBox(height: 10),
+                      const Text(
+                        'Course 1',
                         style: TextStyle(
                             fontSize: 17,
-                            color: Colors.teal,
+                            color: Colors.black,
                             fontWeight: FontWeight.normal),
                       ),
                       ElevatedButton(
@@ -77,9 +68,10 @@ class _coursesPageState extends State<coursesPage> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => EnrollmentForm()));
+                                  builder: (context) =>
+                                      const htmlPage()));
                         },
-                        child: Text(
+                        child: const Text(
                           'Enroll Now',
                           style: TextStyle(fontSize: 16),
                         ),
@@ -87,14 +79,14 @@ class _coursesPageState extends State<coursesPage> {
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 15,
                 ),
                 Container(
                   height: 200,
                   width: 160,
                   decoration: BoxDecoration(
-                    color: Colors.teal.shade100,
+                    color: const Color(0xffeca731),
                     borderRadius: BorderRadius.circular(15),
                     boxShadow: [
                       BoxShadow(
@@ -107,18 +99,17 @@ class _coursesPageState extends State<coursesPage> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Image.asset(
-                        'assets/css.png',
-                        height: 100,
-                        width: 100,
-                        fit: BoxFit.cover,
+                      const Icon(
+                        Icons.auto_awesome_mosaic_rounded,
+                        size: 100,
+                        color: Colors.white,
                       ),
-                      SizedBox(height: 10),
-                      Text(
-                        'Learn CSS3',
+                      const SizedBox(height: 10),
+                      const Text(
+                        'Course 2',
                         style: TextStyle(
                             fontSize: 17,
-                            color: Colors.teal,
+                            color: Colors.black,
                             fontWeight: FontWeight.normal),
                       ),
                       ElevatedButton(
@@ -126,421 +117,10 @@ class _coursesPageState extends State<coursesPage> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => EnrollmentForm()));
+                                  builder: (context) =>
+                                      const htmlPage()));
                         },
-                        child: Text(
-                          'Enroll Now',
-                          style: TextStyle(fontSize: 16),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 15,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  height: 200,
-                  width: 160,
-                  decoration: BoxDecoration(
-                    color: Colors.teal.shade100,
-                    borderRadius: BorderRadius.circular(15),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 2,
-                        blurRadius: 3,
-                      ),
-                    ],
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        'assets/js.png',
-                        height: 100,
-                        width: 100,
-                        fit: BoxFit.cover,
-                      ),
-                      SizedBox(height: 10),
-                      Text(
-                        'Learn JavaScript',
-                        style: TextStyle(
-                            fontSize: 17,
-                            color: Colors.teal,
-                            fontWeight: FontWeight.normal),
-                      ),
-                      ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => EnrollmentForm()));
-                        },
-                        child: Text(
-                          'Enroll Now',
-                          style: TextStyle(fontSize: 16),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  width: 15,
-                ),
-                Container(
-                  height: 200,
-                  width: 160,
-                  decoration: BoxDecoration(
-                    color: Colors.teal.shade100,
-                    borderRadius: BorderRadius.circular(15),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 2,
-                        blurRadius: 3,
-                      ),
-                    ],
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        'assets/java.png',
-                        height: 100,
-                        width: 100,
-                        fit: BoxFit.cover,
-                      ),
-                      SizedBox(height: 10),
-                      Text(
-                        'Learn Java',
-                        style: TextStyle(
-                            fontSize: 17,
-                            color: Colors.teal,
-                            fontWeight: FontWeight.normal),
-                      ),
-                      ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => EnrollmentForm()));
-                        },
-                        child: Text(
-                          'Enroll Now',
-                          style: TextStyle(fontSize: 16),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 15,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  height: 200,
-                  width: 160,
-                  decoration: BoxDecoration(
-                    color: Colors.teal.shade100,
-                    borderRadius: BorderRadius.circular(15),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 2,
-                        blurRadius: 3,
-                      ),
-                    ],
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        'assets/Python.png',
-                        height: 100,
-                        width: 100,
-                        fit: BoxFit.cover,
-                      ),
-                      SizedBox(height: 10),
-                      Text(
-                        'Learn PYTHON',
-                        style: TextStyle(
-                            fontSize: 17,
-                            color: Colors.teal,
-                            fontWeight: FontWeight.normal),
-                      ),
-                      ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => EnrollmentForm()));
-                        },
-                        child: Text(
-                          'Enroll Now',
-                          style: TextStyle(fontSize: 16),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  width: 15,
-                ),
-                Container(
-                  height: 200,
-                  width: 160,
-                  decoration: BoxDecoration(
-                    color: Colors.teal.shade100,
-                    borderRadius: BorderRadius.circular(15),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 2,
-                        blurRadius: 3,
-                      ),
-                    ],
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        'assets/Flutter.png',
-                        height: 100,
-                        width: 100,
-                        fit: BoxFit.cover,
-                      ),
-                      SizedBox(height: 10),
-                      Text(
-                        'Learn FLUTTER',
-                        style: TextStyle(
-                            fontSize: 17,
-                            color: Colors.teal,
-                            fontWeight: FontWeight.normal),
-                      ),
-                      ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => EnrollmentForm()));
-                        },
-                        child: Text(
-                          'Enroll Now',
-                          style: TextStyle(fontSize: 16),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 15,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  height: 200,
-                  width: 160,
-                  decoration: BoxDecoration(
-                    color: Colors.teal.shade100,
-                    borderRadius: BorderRadius.circular(15),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 2,
-                        blurRadius: 3,
-                      ),
-                    ],
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        'assets/C#.png',
-                        height: 100,
-                        width: 100,
-                        fit: BoxFit.cover,
-                      ),
-                      SizedBox(height: 10),
-                      Text(
-                        'Learn C#',
-                        style: TextStyle(
-                            fontSize: 17,
-                            color: Colors.teal,
-                            fontWeight: FontWeight.normal),
-                      ),
-                      ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => EnrollmentForm()));
-                        },
-                        child: Text(
-                          'Enroll Now',
-                          style: TextStyle(fontSize: 16),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  width: 15,
-                ),
-                Container(
-                  height: 200,
-                  width: 160,
-                  decoration: BoxDecoration(
-                    color: Colors.teal.shade100,
-                    borderRadius: BorderRadius.circular(15),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 2,
-                        blurRadius: 3,
-                      ),
-                    ],
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        'assets/cpp.png',
-                        height: 100,
-                        width: 100,
-                        fit: BoxFit.cover,
-                      ),
-                      SizedBox(height: 10),
-                      Text(
-                        'Learn C++',
-                        style: TextStyle(
-                            fontSize: 17,
-                            color: Colors.teal,
-                            fontWeight: FontWeight.normal),
-                      ),
-                      ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => EnrollmentForm()));
-                        },
-                        child: Text(
-                          'Enroll Now',
-                          style: TextStyle(fontSize: 16),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 15,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  height: 200,
-                  width: 160,
-                  decoration: BoxDecoration(
-                    color: Colors.teal.shade100,
-                    borderRadius: BorderRadius.circular(15),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 2,
-                        blurRadius: 3,
-                      ),
-                    ],
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        'assets/dart.png',
-                        height: 100,
-                        width: 100,
-                        fit: BoxFit.cover,
-                      ),
-                      SizedBox(height: 10),
-                      Text(
-                        'Learn DART',
-                        style: TextStyle(
-                            fontSize: 17,
-                            color: Colors.teal,
-                            fontWeight: FontWeight.normal),
-                      ),
-                      ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => EnrollmentForm()));
-                        },
-                        child: Text(
-                          'Enroll Now',
-                          style: TextStyle(fontSize: 16),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  width: 15,
-                ),
-                Container(
-                  height: 200,
-                  width: 160,
-                  decoration: BoxDecoration(
-                    color: Colors.teal.shade100,
-                    borderRadius: BorderRadius.circular(15),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 2,
-                        blurRadius: 3,
-                      ),
-                    ],
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        'assets/sql.png',
-                        height: 100,
-                        width: 100,
-                        fit: BoxFit.cover,
-                      ),
-                      SizedBox(height: 10),
-                      Text(
-                        'Learn SQL',
-                        style: TextStyle(
-                            fontSize: 17,
-                            color: Colors.teal,
-                            fontWeight: FontWeight.normal),
-                      ),
-                      ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => EnrollmentForm()));
-                        },
-                        child: Text(
+                        child: const Text(
                           'Enroll Now',
                           style: TextStyle(fontSize: 16),
                         ),

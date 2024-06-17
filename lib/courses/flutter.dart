@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import, unnecessary_import, camel_case_types, avoid_print
+
 import 'package:course_learning/courses/fluttermodel.dart';
 import 'package:course_learning/courses/pythonmodel.dart';
 import 'package:flutter/cupertino.dart';
@@ -23,7 +25,7 @@ class _flutterModelState extends State<flutterModel> {
     if (videoId != null) {
       _controller = YoutubePlayerController(
         initialVideoId: videoId!,
-        flags: YoutubePlayerFlags(
+        flags: const YoutubePlayerFlags(
           autoPlay: false,
         ),
       );
@@ -43,7 +45,7 @@ class _flutterModelState extends State<flutterModel> {
     print("url of current videl $url");
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.white),
+        iconTheme: const IconThemeData(color: Color(0xfffdfdfd)),
         title: Text(
           'Flutter Course',
           style: Theme.of(context).textTheme.bodyMedium,
@@ -71,7 +73,7 @@ class _flutterModelState extends State<flutterModel> {
                       });
                     },
                     child: ListTile(
-                      contentPadding: EdgeInsets.all(10),
+                      contentPadding: const EdgeInsets.all(10),
                       leading: Image.asset(
                         FlutterModel.VideoList[i].thumbnail!,
                         height: 100,
@@ -80,7 +82,7 @@ class _flutterModelState extends State<flutterModel> {
                       ),
                       title: Text(
                         FlutterModel.VideoList[i].tittle!,
-                        style: TextStyle(color: Colors.black, fontSize: 15),
+                        style: const TextStyle(color: Colors.black, fontSize: 15),
                       ),
                     ),
                   );
